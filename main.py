@@ -14,6 +14,9 @@ ENTRY = "The doorstop does its job so perfectly you forget it exists \u2014 unti
 
 
 def main() -> None:
+    # Self-check against the competition gate: one line, 1-200 chars.
+    assert 1 <= len(ENTRY) <= 200, "entry must be 1-200 characters"
+    assert "\n" not in ENTRY, "entry must stay on one line"
     os.makedirs("/output", exist_ok=True)
     with open("/output/entry.txt", "w", encoding="utf-8") as f:
         f.write(ENTRY)
